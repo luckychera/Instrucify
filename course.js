@@ -58,19 +58,7 @@ loadLesson(0);
 
 
 
-function updateCourseProgress(courseId, totalTopics) {
-  const progress = getUserProgress();
-  const course = progress?.courses[courseId];
 
-  if (!course) return;
 
-  const percent = Math.round(
-    (course.completedTopics.length / totalTopics) * 100
-  );
-
-  document.getElementById("progress-fill").style.width = percent + "%";
-  document.getElementById("progress-percent").textContent = percent + "%";
-}
-updateCourseProgress(courseKey, course.lessons.length);
 
 
