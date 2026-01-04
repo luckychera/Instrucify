@@ -15,7 +15,7 @@ function loginUser(user) {
 // logout user
 function logoutUser() {
   localStorage.removeItem("currentUser");
-  window.location.href = "/index.html";
+  window.location.href = "index.html";
 }
 
 // protect pages
@@ -27,12 +27,12 @@ function requireAuth() {
       window.location.pathname + window.location.search;
 
     window.location.href =
-      "/login.html?next=" + encodeURIComponent(next);
+      "login.html?next=" + encodeURIComponent(next);
   }
 }
 
 // redirect logged-in users away from login/register
-function redirectIfLoggedIn(defaultPage = "/index.html") {
+function redirectIfLoggedIn(defaultPage = "index.html") {
   const user = getCurrentUser();
   if (user) {
     const params = new URLSearchParams(window.location.search);
@@ -48,6 +48,7 @@ function updateAuthUI() {
 
   if (user && loginLink) {
     loginLink.textContent = `Hi, ${user.fullName || user.email}`;
-    loginLink.href = "/dashboard.html";
+    loginLink.href = "dashboard.html";
   }
 }
+
