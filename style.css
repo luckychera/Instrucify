@@ -323,7 +323,7 @@ body.dark .footer { background: linear-gradient(135deg, #0f172a, #0b1220); }
 .image-hero-bg {
   position: absolute;
   inset: 0;
-  background: url('./Asset/Background.webp') center / cover no-repeat;
+  background: url('Background.webp') center / cover no-repeat;
   z-index: 0;
 }
 
@@ -736,4 +736,5 @@ body.login, body.register { display:flex; justify-content:center; align-items:ce
 @media (min-width:769px) {
   .nav-links { display:flex !important; }
   .hamburger { display:none !important; }
+
 }
