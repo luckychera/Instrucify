@@ -56,10 +56,7 @@ function checkQuiz() {
 
 loadLesson(0);
 
-const progress = JSON.parse(localStorage.getItem("progress")) || {};
-const lastLesson = progress[courseId]?.lastLesson ?? 0;
 
-loadLesson(lastLesson);
 
 function updateCourseProgress(courseId, totalTopics) {
   const progress = getUserProgress();
@@ -75,4 +72,5 @@ function updateCourseProgress(courseId, totalTopics) {
   document.getElementById("progress-percent").textContent = percent + "%";
 }
 updateCourseProgress(courseKey, course.lessons.length);
+
 
