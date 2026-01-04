@@ -3,7 +3,7 @@ const courses = {
   /* ===================== MATHEMATICS ===================== */
   mathematics: {
     title: "Mathematics",
-    topics: [
+    lessons: [
       {
         title: "Numbers and Operations",
         video: "https://www.youtube.com/embed/2ZzuZvz33X0",
@@ -210,7 +210,7 @@ const courses = {
   /* ================= PROGRAMMING ================= */
 programming: {
   title: "Programming",
-  topics: [
+  lessons: [
 
     {
       title: "Introduction to Programming",
@@ -437,7 +437,7 @@ programming: {
 
 graphics: {
   title: "Graphics Design",
-  topics: [
+  lessons: [
 
     {
       title: "Introduction to Graphics Design",
@@ -664,7 +664,7 @@ graphics: {
 
 science: {
   title: "Science",
-  topics: [
+  lessons: [
 
     {
       title: "Introduction to Science",
@@ -891,6 +891,7 @@ science: {
 
 
 };
+
 
 
 
