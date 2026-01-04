@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Instructify</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="register">
+<section class="hero video-hero">
+    
+      <video class="hero-video"
+             autoplay
+             muted
+             loop
+             playsinline
+             preload="auto">
+        <source src="login.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    
+      
+  <div class="hero-overlay"></div>
+  <div class="auth-container hero-content">
+    <h2>Register</h2>
+
+    <form class="auth-form">
+      <input type="text" id="fullName" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+      <button type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="login.html" class="btn">Login</a></p>
+  </div>
+</section>
+  <script src="auth.js"></script>
+<script>
+(function () {
+  const form = document.querySelector('.auth-form');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const fullNameInput = document.getElementById('fullName');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+
+    const fullName = fullNameInput.value.trim();
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
+
+    if (password !== confirmPassword) {
+      alert('Passwords do not match');
+      return;
+    }
+
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    if (users.some(u => u.email === email)) {
+      alert('User already exists');
+      return;
+    }
+
+    const newUser = {
+      fullName,
+      email,
+      password,
+      role: 'student'
+    };
+
+    users.push(newUser);
+    localStorage.setItem('users', JSON.stringify(users));
+
+    // ✅ LOG USER IN
+    localStorage.setItem('currentUser', JSON.stringify(newUser));
+
+    alert('Registration successful');
+
+    const params = new URLSearchParams(window.location.search);
+    const nextPage = params.get('next') || 'index.html';
+
+    window.location.href = nextPage;
+  });
+})();
+</script>
+
+  <script src="script.js"></script>
+</body>
+
+  </html>

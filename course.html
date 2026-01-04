@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Course | Instructify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="course.css">
+</head>
+
+<body>
+
+<script src="auth.js"></script>
+<script>
+  requireAuth();
+
+</script>
+
+
+<div class="course-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="course-sidebar">
+    <h3 id="course-title"></h3>
+    <ul id="lesson-list"></ul>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="course-content">
+    <h2 id="lesson-title"></h2>
+
+    <div class="video-wrapper">
+      <iframe id="lesson-video" allowfullscreen></iframe>
+    </div>
+
+    <div id="lesson-text"></div>
+
+    <div class="quiz-box">
+      <h3 id="quiz-question"></h3>
+      <div id="quiz-options"></div>
+      <button onclick="checkQuiz()" class="btn">Submit</button>
+      <p id="quiz-result"></p>
+    </div>
+    <button onclick="prevLesson()" class="btn " id="Previous">Previous Lesson</button>
+    <button onclick="nextLesson()" class="btn " id="Next">Next Lesson</button>
+  </main>
+    
+</div>
+<script>
+  const prevLesson = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    let lessonIndex = parseInt(urlParams.get("lesson")) || 0;
+    if (lessonIndex > 0) {
+      lessonIndex--;
+      urlParams.set("lesson", lessonIndex);
+      window.location.search = urlParams.toString();
+    }
+  };
+  const nextLesson = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    let lessonIndex = parseInt(urlParams.get("lesson")) || 0;
+    lessonIndex++;
+    urlParams.set("lesson", lessonIndex);
+    window.location.search = urlParams.toString();
+  };
+
+</script>
+<script src="course-data.js"></script>
+<script src="course.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

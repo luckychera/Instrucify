@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+  <title>Instructify® | Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="blog">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo" href="#">Instructify<sup>®</sup></div>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="course.html">Courses</a>
+      <div class="dropdown">
+        <button class="drop-btn" aria-expanded="false" type="button">Pages</button>
+        <div class="dropdown-menu">
+          <a href="book.html">Books</a>
+          <a href="novel.html">Novels</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="admin.html">Admin</a>
+          <a href="blog.html">Blog</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+      <a href="blog.html" aria-current="page">Blog</a>
+      <a href="login.html?next=blog.html">Login</a>
+      <button id="dark-toggle" class="dark-toggle" aria-label="Toggle dark mode">🌙</button>
+    
+    </div>
+    <div class="nav-actions">
+      <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-controls="nav-links" aria-expanded="false">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+      </button>
+      <button id="dark-toggle" class="dark-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <i class="bi bi-moon-fill" aria-hidden="true"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero image-hero">
+    <div class="image-hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>Instructify Blog</h1>
+    <h2>Stories, tips and updates from our team</h2>
+    <p>Read about learning strategies, course highlights, product updates, and student spotlights. Stay inspired and keep learning.</p>
+  </section>
+
+  <!-- BLOG LIST -->
+  <section class="container">
+    <h2 style="text-align:center;">Latest Posts</h2>
+    <div class="card-grid">
+      <article class="card fade-in">
+        <img src="blog-1.jpg" alt="Post 1">
+        <h3>How to Stay Motivated When Learning Online</h3>
+        <p>Strategies to keep your momentum and make steady progress in self-paced courses.</p>
+        <a class="card-cta" href="detail.html?id=1"><span class="cta-text">Read More</span></a>
+      </article>
+
+      <article class="card fade-in">
+        <img src="blog-2.png" alt="Post 2">
+        <h3>Top 10 Study Techniques Backed by Research</h3>
+        <p>Evidence-based techniques that help you retain information and learn faster.</p>
+        <a class="card-cta" href="detail.html?id=2"><span class="cta-text">Read More</span></a>
+      </article>
+
+      <article class="card fade-in">
+        <img src="blog-3.png" alt="Post 3">
+        <h3>How Teachers Can Use Instructify Effectively</h3>
+        <p>Tips for educators to create engaging lessons and track student progress.</p>
+        <a class="card-cta" href="detail.html?id=3"><span class="cta-text">Read More</span></a>
+      </article>
+
+    </div>
+
+    <div style="text-align:center; margin-top:28px;">
+      <a href="blog.html" class="btn">View All Posts</a>
+    </div>
+  </section>
+
+  
+  <footer class="footer">
+  <div class="footer-container">
+    <!-- Logo & Description -->
+    <div class="footer-left">
+      <img src="logo.png" alt="Instructify Logo" class="footer-logo">
+      <p>Instructify helps learners build practical skills through modern, accessible online courses.</p>
+    </div>
+
+    
+    <div class="footer-center">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="course.html">Courses</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    
+    <div class="footer-right">
+      <h4>Connect</h4>
+      <div class="social-icons">
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <p>📧 <a href="mailto:info@instructify.com">info@instructify.com</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Instructify. All rights reserved.</p>
+  </div>
+</footer>
+
+  <script src="auth.js"></script>
+  <script>
+updateAuthUI();
+</script>
+
+  <script src="script.js"></script>
+</body>
+</html>

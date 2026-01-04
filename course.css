@@ -1,0 +1,61 @@
+.course-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f9fafb;
+}
+
+.course-sidebar {
+  width: 260px;
+  background: #0f172a;
+  color: #fff;
+  padding: 20px;
+}
+
+.course-sidebar h3 {
+  margin-bottom: 20px;
+}
+
+.course-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.course-sidebar li {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.course-sidebar li:hover,
+.course-sidebar li.active {
+  background: #2563eb;
+}
+
+.course-content {
+  flex: 1;
+  padding: 40px;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-top: 56.25%;
+  margin-bottom: 20px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.quiz-box {
+  margin-top: 30px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.quiz-box button {
+  margin-top: 10px;
+}

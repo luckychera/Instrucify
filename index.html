@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+  <title>Instructify® | Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <script>
+    // Background video position fix for mobile devices//
+    document.addEventListener('DOMContentLoaded', function() {
+      var video = document.querySelector('.hero-video');
+      if (video) {
+        video.style.objectPosition = 'center center';
+      }
+    });
+    // Hero content z-index fix //
+    document.addEventListener('DOMContentLoaded', function() {
+      var heroContent = document.querySelector('.hero');
+      if (heroContent) {
+        heroContent.style.zIndex = '3';
+      }
+    });
+
+  </script>
+</head>
+<body class="home">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo" href="index.html">Instructify<sup>®</sup></div>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="course.html">Courses</a>
+      <div class="dropdown">
+        <button class="drop-btn" aria-expanded="false" type="button">Pages</button>
+        <div class="dropdown-menu">
+          <a href="book.html">Books</a>
+          <a href="novel.html">Novels</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="admin.html">Admin</a>
+          <a href="blog.html">Blog</a>
+        </div>
+      </div>
+      
+      <a href="contact.html">Contact</a>
+      <a href="login.html?next=index.html">Login</a>
+      <button id="dark-toggle" class="dark-toggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+    <div class="nav-actions">
+      <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-controls="nav-links" aria-expanded="false">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+      </button>
+      <button id="dark-toggle" class="dark-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <i class="bi bi-moon-fill" aria-hidden="true"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero video-hero">
+    
+      <video class="hero-video"
+             autoplay
+             muted
+             loop
+             playsinline
+             preload="auto">
+        <source src="hero.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    
+      
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+  <h1 class="hero-animate hero-title">Welcome to Instructify<sup>®</sup></h1>
+  <h2 class="hero-typewriter">
+  <span id="typewriter-text"></span>
+  <span class="type-cursor">|</span>
+</h2>
+  <p>Instructify is a clean, student-friendly educational platform designed to make learning easier for everyone. Access lessons, connect with teachers, and grow your skills — anytime, anywhere.</p>
+    <div class="hero-animate hero-buttons">
+    <a href="about.html" class="cta-btn">Learn More</a>
+    <a href="courses.html" class="cta-btn">Explore Courses</a>
+  </div></div>
+  </section>
+
+  <!-- COURSES SECTION -->
+  <section class="container courses">
+    <h2 style="text-align: center;">Featured Courses</h2>
+    <div class="card-grid">
+      <div class="card fade-in">
+        <img src="maths main.webp" alt="Course 1">
+        <h3>Mathematics</h3>
+        <p>Build your math skills from basic to advanced.</p>
+        <a class="card-cta" href="register.html?next=courses.html" aria-label="Register to start this course"><span class="cta-text">Register to start course</span></a>
+      </div>
+      <div class="card fade-in">
+        <img src="science.webp" alt="Course 2">
+        <h3>Science</h3>
+        <p>Explore physics, chemistry, and biology concepts.</p>
+        <a class="card-cta" href="register.html?next=courses.html" aria-label="Register to start this course"><span class="cta-text">Register to start course</span></a>
+      </div>
+      <div class="card fade-in">
+        <img src="programming.webp" alt="Course 3">
+        <h3>Programming</h3>
+        <p>Learn modern programming languages & projects.</p>
+        <a class="card-cta" href="register.html?next=courses.html" aria-label="Register to start this course"><span class="cta-text">Register to start course</span></a>
+      </div>
+      <div class="card fade-in">
+        <img src="desinging.webp" alt="Course 4">
+        <h3>Desinging</h3>
+        <p>Explore Graphics and UX/UI design courses</p>
+        <a class="card-cta" href="register.html?next=courses.html" aria-label="Register to start this course"><span class="cta-text">Register to start course</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2 style="text-align:center;">Latest Posts</h2>
+    <div class="card-grid">
+      <article class="card fade-in">
+        <img src="blog-1.jpg" alt="Post 1">
+        <h3>How to Stay Motivated When Learning Online</h3>
+        <p>Strategies to keep your momentum and make steady progress in self-paced courses.</p>
+        <a class="card-cta" href="blog.html"><span class="cta-text">Read More</span></a>
+      </article>
+
+      <article class="card fade-in">
+        <img src="blog-2.png" alt="Post 2">
+        <h3>Top 10 Study Techniques Backed by Research</h3>
+        <p>Evidence-based techniques that help you retain information and learn faster.</p>
+        <a class="card-cta" href="blog.html"><span class="cta-text">Read More</span></a>
+      </article>
+
+      <article class="card fade-in">
+        <img src="blog-3.png" alt="Post 3">
+        <h3>How Teachers Can Use Instructify Effectively</h3>
+        <p>Tips for educators to create engaging lessons and track student progress.</p>
+        <a class="card-cta" href="blog.html"><span class="cta-text">Read More</span></a>
+      </article>
+
+    </div>
+
+    <div style="text-align:center; margin-top:28px;">
+      <a href="blog.html" class="cta-btn">View All Posts</a>
+    </div>
+  </section>
+  
+  <!-- TESTIMONIALS -->
+  <section class="container testimonials">
+    <h2 style="text-align: center;">What Students Say</h2>
+    <div class="card-grid " >
+      <div class="card slide-in">
+        <img src="testimonial.webp" alt="testimonial">       
+        <blockquote class="testimonial-quote">Instructify transformed my learning journey!</blockquote>
+        <h4 style="text-align: center;"> Eyob</h4>
+      </div>
+      <div class="card slide-in">
+        <img src="testimonial 1.webp" alt="testimonial">
+        <blockquote class="testimonial-quote">Excellent courses and supportive teachers.</blockquote>
+        <h4 style="text-align: center;"> Hellen</h4>
+      </div>
+      <div class="card slide-in">
+        <img src="testimonial 2.webp" alt="testimonial">
+        <blockquote class="testimonial-quote">Easy to use and engaging content.</blockquote>
+        <h4 style="text-align: center;"> Jhon</h4>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+  <div class="footer-container">
+    <!-- Logo & Description -->
+    <div class="footer-left">
+      <img src="logo.png" alt="Instructify Logo" class="footer-logo">
+      <p>Instructify helps learners build practical skills through modern, accessible online courses.</p>
+    </div>
+
+    
+    <div class="footer-center">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    
+    <div class="footer-right">
+      <h4>Connect</h4>
+      <div class="social-icons">
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <p>📧 <a href="mailto:info@instructify.com">info@instructify.com</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Instructify. All rights reserved.</p>
+  </div>
+</footer>
+
+  <script src="auth.js"></script>
+
+  <script>
+updateAuthUI();
+</script>
+
+  <script src="script.js"></script>
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.hero-animate').forEach(el => {
+      el.classList.add('hero-show');
+    });
+  });
+</script>
+
+  <script>
+  const textArray = [
+    "Modern Learning.",
+    "Simple.",
+    "Smart.",
+    "Accessible."
+  ];
+
+  const typingSpeed = 80;
+  const deletingSpeed = 50;
+  const delayBetweenTexts = 1200;
+
+  const textElement = document.getElementById("typewriter-text");
+  let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function typeEffect() {
+    const currentText = textArray[textIndex];
+
+    if (!isDeleting) {
+      textElement.textContent = currentText.substring(0, charIndex + 1);
+      charIndex++;
+
+      if (charIndex === currentText.length) {
+        setTimeout(() => isDeleting = true, delayBetweenTexts);
+      }
+    } else {
+      textElement.textContent = currentText.substring(0, charIndex - 1);
+      charIndex--;
+
+      if (charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % textArray.length;
+      }
+    }
+
+    setTimeout(typeEffect, isDeleting ? deletingSpeed : typingSpeed);
+  }
+
+  document.addEventListener("DOMContentLoaded", typeEffect);
+</script>
+
+</body>
+</html>
