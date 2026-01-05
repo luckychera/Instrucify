@@ -42,34 +42,15 @@
       <button onclick="checkQuiz()" class="btn">Submit</button>
       <p id="quiz-result"></p>
     </div>
-    <button onclick="prevLesson()" class="btn " id="Previous">Previous Lesson</button>
-    <button onclick="nextLesson()" class="btn " id="Next">Next Lesson</button>
   </main>
     
 </div>
-<script>
-  const prevLesson = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    let lessonIndex = parseInt(urlParams.get("lesson")) || 0;
-    if (lessonIndex > 0) {
-      lessonIndex--;
-      urlParams.set("lesson", lessonIndex);
-      window.location.search = urlParams.toString();
-    }
-  };
-  const nextLesson = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    let lessonIndex = parseInt(urlParams.get("lesson")) || 0;
-    lessonIndex++;
-    urlParams.set("lesson", lessonIndex);
-    window.location.search = urlParams.toString();
-  };
 
-</script>
 <script src="course-data.js"></script>
 <script src="course.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
