@@ -46,7 +46,7 @@
 </nav>
 
 <!-- ================= HEADER ================= -->
-<section class="hero" style="padding:110px 20px 60px; bg-img: book.png;">
+<section class="hero" style="padding:110px 20px 60px; ">
   <h1>Books Library</h1>
   <p>Browse textbooks, short notes, exam books & programming resources</p>
 </section>
@@ -119,8 +119,15 @@
 
 <!-- ================= BOOK LOGIC ================= -->
 <script>
-/* ---------- LOGIN STATE (STATIC SIMULATION) ---------- */
+/* ---------- LOGIN STATE ---------- */
 const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+
+/* ---------- ELEMENTS ---------- */
+const searchInput  = document.getElementById("searchInput");
+const gradeFilter  = document.getElementById("gradeFilter");
+const subjectFilter= document.getElementById("subjectFilter");
+const typeFilter   = document.getElementById("typeFilter");
+const grid         = document.getElementById("booksGrid");
 
 /* ---------- BOOK DATA ---------- */
 const books = [
@@ -130,8 +137,8 @@ const books = [
     subject: "Mathematics",
     type: "Short Notes",
     locked: false,
-    cover: "maths main.webp",
-    file: "algebra.pdf",
+    cover: "Asset/maths main.webp",
+    file: "Grade 9.pdf",
     description: "Concise algebra notes with worked examples."
   },
   {
@@ -141,7 +148,7 @@ const books = [
     type: "Exam Book",
     locked: true,
     cover: "science.webp",
-    file: "Grade 11.pdf",
+    file: "Grade 10.pdf",
     description: "Exam-oriented chemistry questions and solutions."
   },
   {
@@ -151,19 +158,17 @@ const books = [
     type: "Textbook",
     locked: true,
     cover: "programming.webp",
-    file: "javascript.pdf",
+    file: "Book Folder/javascript.pdf",
     description: "Learn JavaScript fundamentals and DOM manipulation."
   }
 ];
 
 /* ---------- RENDER ---------- */
-const grid = document.getElementById("booksGrid");
-
 function renderBooks(list) {
   grid.innerHTML = "";
 
   if (!list.length) {
-    grid.innerHTML = "<p>No books found.</p>";
+    grid.innerHTML = `<p style="opacity:.7">No books found</p>`;
     return;
   }
 
@@ -179,37 +184,42 @@ function renderBooks(list) {
 
         ${
           locked
-            ? `<a href="login.html?next=books.html" class="card-cta">
-                 <span class="cta-text">🔒 Login to Access</span>
-               </a>`
-            : `<a href="${book.file}" download class="card-cta">
-                 <span class="cta-text">Download</span>
-               </a>`
+          ? `<a href="login.html?next=books.html" class="card-cta">
+               <span class="cta-text">🔒 Login to Access</span>
+             </a>`
+          : `<a href="${book.file}" download class="card-cta">
+               <span class="cta-text">Download</span>
+             </a>`
         }
       </div>
     `;
   });
 }
 
-/* ---------- FILTERING ---------- */
+/* ---------- FILTER LOGIC (FIXED) ---------- */
 function applyFilters() {
-  const q = searchInput.value.toLowerCase();
+  const q = searchInput.value.trim().toLowerCase();
   const g = gradeFilter.value;
   const s = subjectFilter.value;
   const t = typeFilter.value;
 
-  const filtered = books.filter(b =>
-    (!q || b.title.toLowerCase().includes(q)) &&
-    (!g || b.grade === g) &&
-    (!s || b.subject === s) &&
-    (!t || b.type === t)
-  );
+  const filtered = books.filter(b => {
+    return (
+      (!q || b.title.toLowerCase().includes(q) || b.description.toLowerCase().includes(q)) &&
+      (!g || b.grade === g) &&
+      (!s || b.subject === s) &&
+      (!t || b.type === t)
+    );
+  });
 
   renderBooks(filtered);
 }
 
-["searchInput","gradeFilter","subjectFilter","typeFilter"]
-  .forEach(id => document.getElementById(id).addEventListener("input", applyFilters));
+/* ---------- EVENTS ---------- */
+searchInput.addEventListener("keyup", applyFilters);
+gradeFilter.addEventListener("change", applyFilters);
+subjectFilter.addEventListener("change", applyFilters);
+typeFilter.addEventListener("change", applyFilters);
 
 /* ---------- TAG FILTER ---------- */
 document.querySelectorAll(".tag").forEach(tag => {
@@ -219,9 +229,13 @@ document.querySelectorAll(".tag").forEach(tag => {
   });
 });
 
+/* ---------- INIT ---------- */
 renderBooks(books);
 </script>
 
+
+
 </body>
 </html>
+
 
